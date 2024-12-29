@@ -33,8 +33,8 @@ p: list with parameters of the two gamma functions:
     dt  = TR/fMRI_T
     u   = N.arange(p[6]/dt + 1) - p[5]/dt
     hrf=scipy.stats.gamma.pdf(u,p[0]/p[2],scale=1.0/(dt/p[2])) - scipy.stats.gamma.pdf(u,p[1]/p[3],scale=1.0/(dt/p[3]))/p[4]
-    good_pts=N.array(range(N.int(p[6]/TR)))*fMRI_T
-    hrf=hrf[list(good_pts)]
+    good_pts=N.array(range(int(p[6]/TR)))*fMRI_T
+    hrf=hrf[list(good_pts.astype('int'))]
     # hrf = hrf([0:(p(7)/RT)]*fMRI_T + 1);
     hrf = hrf/N.sum(hrf);
     return hrf

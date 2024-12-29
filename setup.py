@@ -59,7 +59,7 @@ if __name__ == "__main__":
         download_url=DOWNLOAD_URL,
         #install_requires=["moss>=0.3.3"],
         packages=['poldracklab', 'poldracklab.tests',
-                  'poldracklab.utils'],
+                  'poldracklab.utils','poldracklab.fmri'],
 #        scripts=['scripts/run_fmri.py', 'scripts/run_group.py',
 #                 'scripts/run_warp.py', 'scripts/setup_project.py',
 #                 'scripts/make_masks.py', 'scripts/anatomy_snapshots.py',
