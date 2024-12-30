@@ -8,28 +8,24 @@ from typing import Optional
 def spm_hrf(
     TR: (float, np.ndarray), fMRI_T: float = 16.0, p: Optional[np.ndarray] = None
 ) -> np.ndarray:
-    """An implementation of spm_hrf.m from the SPM distribution
+    """An implementation of spm_hrf.m from the SPM distribution: Generates a hemodynamic response function (HRF)
+    using a combination of two gamma functions.
 
-    Arguments:
+    Args:
 
-    Required:
-    TR: repetition time(s) at which to generate the HRF (in seconds)
+        TR: repetition time(s) at which to generate the HRF (in seconds)
 
-    Optional:
+        fMRI_T: time steps per second for the hrf (default 16)
 
-    fMRI_T: float = 16.0
-        time steps per second for the hrf (default 16)
+        p: list with parameters of the two gamma functions:
 
-    p: list with parameters of the two gamma functions:
-                                                         defaults
-                                                        (seconds)
-       p[0] - delay of response (relative to onset)         6
-       p[1] - delay of undershoot (relative to onset)      16
-       p[2] - dispersion of response                        1
-       p[3] - dispersion of undershoot                      1
-       p[4] - ratio of response to undershoot               6
-       p[5] - onset (seconds)                               0
-       p[6] - length of kernel (seconds)                   32
+            p[0] - delay of response (relative to onset)         6
+            p[1] - delay of undershoot (relative to onset)      16
+            p[2] - dispersion of response                        1
+            p[3] - dispersion of undershoot                      1
+            p[4] - ratio of response to undershoot               6
+            p[5] - onset (seconds)                               0
+            p[6] - length of kernel (seconds)                   32
 
     Returns:
         np.ndarray: HRF(s)

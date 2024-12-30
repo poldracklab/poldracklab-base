@@ -37,20 +37,28 @@ def run_shell_cmd(
 
 
 # from http://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py
-def DownloadFile(url, local_filename):
+def DownloadFile(
+    url: str,
+    local_filename: str,
+    connect_timeout: float = 10.0,
+    chunk_size: int = 1024,
+) -> None:
+    """
+    Download a file from a URL to a local filename
+
+    Args:
+        url (str): the URL to download from
+        local_filename (str): the local filename to save the file to
+    """
+
     if not os.path.exists(os.path.dirname(local_filename)):
         os.makedirs(os.path.dirname(local_filename))
     s = requests.Session()
     s.mount("http://", HTTPAdapter(max_retries=Retry(total=5, status_forcelist=[500])))
 
-    connect_timeout = 10.0
-
-    r = s.get(url=url, timeout=(connect_timeout, 10.0))
-    # except requests.exceptions.ConnectTimeout:
-    #    print "Too slow Mojo!"
+    r = s.get(url=url, timeout=connect_timeout)
 
     with open(local_filename, "wb") as f:
-        for chunk in r.iter_content(chunk_size=1024):
+        for chunk in r.iter_content(chunk_size=chunk_size):
             if chunk:  # filter out keep-alive new chunks
                 f.write(chunk)
-    return

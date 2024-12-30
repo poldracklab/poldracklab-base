@@ -1,6 +1,7 @@
 from statsmodels.regression.linear_model import OLS
 from sklearn.model_selection import KFold
 import numpy as np
+from typing import Iterator, Tuple
 
 
 class BalancedKFold:
@@ -9,16 +10,31 @@ class BalancedKFold:
     a set of folds that are balanced in their distriutions
     of the X value - see Kohavi, 1995
     - we don't actually need X but we take it for consistency
+
+    Args:
+        nfolds (int): the number of folds to use
+        pthresh (float): the p-value threshold for a good split
+        verbose (bool): whether to print verbose output
     """
 
-    def __init__(self, nfolds=5, pthresh=0.8, verbose=False):
+    def __init__(self, nfolds: int = 5, pthresh: float = 0.8, verbose: bool = False):
         self.nfolds = nfolds
         self.pthresh = pthresh
         self.verbose = verbose
 
-    def split(self, X, Y, max_splits=1000):
+    def split(
+        self, X: np.ndarray, Y: np.ndarray, max_splits: int = 1000
+    ) -> Iterator[Tuple[np.ndarray, np.ndarray]]:
         """
-        - we don't actually need X but we take it for consistency
+        Split the data into training and testing sets
+
+        Args:
+            X (np.ndarray): the input data
+            Y (np.ndarray): the target data
+            max_splits (int): the maximum number of splits to try
+
+        Returns:
+            Iterator[Tuple[np.ndarray, np.ndarray]]: the training and testing sets
         """
 
         nsubs = len(Y)
