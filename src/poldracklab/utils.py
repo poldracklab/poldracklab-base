@@ -7,6 +7,7 @@ The module contains the following functions:
 
 - `run_shell_cmd`: Run a shell command and return the output
 - `DownloadFile`: Download a file from a URL to a local filename
+
 """
 
 import subprocess

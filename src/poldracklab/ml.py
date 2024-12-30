@@ -6,6 +6,7 @@ functions to split data into training and testing sets.
 The module contains the following functions:
 
 - `BalancedKFold`: Split data into training and testing sets using anova across CV folds
+
 """
 
 from statsmodels.regression.linear_model import OLS

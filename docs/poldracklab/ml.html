@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 <meta name="generator" content="pdoc3 0.11.5">
-<title>poldracklab.ml.cv API documentation</title>
+<title>poldracklab.ml API documentation</title>
 <meta name="description" content="Functions for cross-validation …">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
@@ -33,7 +33,7 @@ el.replaceWith(d);
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>poldracklab.ml.cv</code></h1>
+<h1 class="title">Module <code>poldracklab.ml</code></h1>
 </header>
 <section id="section-intro">
 <p>Functions for cross-validation</p>
@@ -41,7 +41,7 @@ el.replaceWith(d);
 functions to split data into training and testing sets.</p>
 <p>The module contains the following functions:</p>
 <ul>
-<li><code><a title="poldracklab.ml.cv.BalancedKFold" href="#poldracklab.ml.cv.BalancedKFold">BalancedKFold</a></code>: Split data into training and testing sets using anova across CV folds</li>
+<li><code><a title="poldracklab.ml.BalancedKFold" href="#poldracklab.ml.BalancedKFold">BalancedKFold</a></code>: Split data into training and testing sets using anova across CV folds</li>
 </ul>
 </section>
 <section>
@@ -53,7 +53,7 @@ functions to split data into training and testing sets.</p>
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="poldracklab.ml.cv.BalancedKFold"><code class="flex name class">
+<dt id="poldracklab.ml.BalancedKFold"><code class="flex name class">
 <span>class <span class="ident">BalancedKFold</span></span>
 <span>(</span><span>nfolds: int = 5, pthresh: float = 0.8, verbose: bool = False)</span>
 </code></dt>
@@ -143,7 +143,7 @@ of the X value - see Kohavi, 1995
 </dl></div>
 <h3>Methods</h3>
 <dl>
-<dt id="poldracklab.ml.cv.BalancedKFold.split"><code class="name flex">
+<dt id="poldracklab.ml.BalancedKFold.split"><code class="name flex">
 <span>def <span class="ident">split</span></span>(<span>self, X: numpy.ndarray, Y: numpy.ndarray, max_splits: int = 1000) ‑> Iterator[Tuple[numpy.ndarray, numpy.ndarray]]</span>
 </code></dt>
 <dd>
@@ -227,15 +227,15 @@ of the X value - see Kohavi, 1995
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
-<li><code><a title="poldracklab.ml" href="index.html">poldracklab.ml</a></code></li>
+<li><code><a title="poldracklab" href="index.html">poldracklab</a></code></li>
 </ul>
 </li>
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="poldracklab.ml.cv.BalancedKFold" href="#poldracklab.ml.cv.BalancedKFold">BalancedKFold</a></code></h4>
+<h4><code><a title="poldracklab.ml.BalancedKFold" href="#poldracklab.ml.BalancedKFold">BalancedKFold</a></code></h4>
 <ul class="">
-<li><code><a title="poldracklab.ml.cv.BalancedKFold.split" href="#poldracklab.ml.cv.BalancedKFold.split">split</a></code></li>
+<li><code><a title="poldracklab.ml.BalancedKFold.split" href="#poldracklab.ml.BalancedKFold.split">split</a></code></li>
 </ul>
 </li>
 </ul>
