@@ -1,6 +1,7 @@
 from poldracklab.pubmed import (
     run_pubmed_query,
     parse_pubmed_query_result,
+    get_processed_query_results,
 )
 import pytest
 
@@ -20,6 +21,16 @@ def parsed_pubmed_query_result(pubmed_query_result):
 @pytest.fixture
 def pubmed_record(parsed_pubmed_query_result):
     return list(parsed_pubmed_query_result.values())[0]
+
+
+def test_get_processed_query_results():
+    results = get_processed_query_results(
+        "'Badomics words and the power and peril of the ome-meme'", "test@test.com"
+    )
+    assert len(results) == 1
+    result = list(results.values())[0]
+    assert "DOI" in result
+    assert result["DOI"] == "10.1186/2047-217x-1-6"
 
 
 def test_get_pubmed_data(pubmed_query_result):

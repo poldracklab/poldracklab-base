@@ -1,15 +1,17 @@
 [project]
 name = "poldracklab"
 version = "0.1.0"
-description = "Add your description here"
+description = "General utilities developed by the Poldrack Lab"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "biopython>=1.84",
     "ipython>=8.31.0",
     "matplotlib>=3.10.0",
     "numpy>=2.2.1",
     "pre-commit>=4.0.1",
     "pytest>=8.3.4",
+    "python-dotenv>=1.0.1",
     "requests>=2.32.3",
     "scikit-learn>=1.6.0",
     "scipy>=1.14.1",
