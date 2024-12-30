@@ -53,9 +53,3 @@ class BalancedKFold:
             if runctr > max_splits:
                 print("no sufficient split found, returning best (p=%f)" % best_pval)
                 return iter(best_folds)
-
-
-if __name__ == "__main__":
-    Y = np.random.randn(100, 1)
-    bf = BalancedKFold(4, verbose=True)
-    s = bf.split(Y, Y)
