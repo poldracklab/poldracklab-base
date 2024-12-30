@@ -16,7 +16,7 @@ repos:
     -   id: pdoc
         name: pdoc
         description: 'pdoc: Auto-generate API documentation for Python projects'
-        entry: pdoc --force -o ./docs ./src/poldracklab
+        entry: pdoc --force -o ./docs ./src/poldracklab; git add docs; git commit -m "Update documentation"
         language: python
         language_version: python3
         require_serial: true
