@@ -36,9 +36,12 @@ jobs:
 
       - name: Install the module
         run: uv pip install .     
+        
+      - name: Install pdoc3
+        run: uv pip install pdoc3
 
       - name: build docs
-        run: pdoc --html -o docs/ src/poldracklab
+        run: pdoc3 --html -o docs/ src/poldracklab
 
       - uses: actions/upload-pages-artifact@v3
         with:
