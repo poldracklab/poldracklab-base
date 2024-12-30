@@ -16,7 +16,7 @@ repos:
     -   id: pdoc
         name: pdoc
         description: 'pdoc: Auto-generate API documentation for Python projects'
-        entry: pdoc -o ./docs ./src/poldracklab
+        entry: pdoc --force -o ./docs ./src/poldracklab
         language: python
         language_version: python3
         require_serial: true
