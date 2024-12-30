@@ -1,6 +1,6 @@
 test:
 	python -m pytest tests
-	python -m doctest src/poldracklab/*.py src/poldracklab/*/*.py
+	python -m doctest src/poldracklab/*.py
 
 build-docs:
 	- rm -rf docs

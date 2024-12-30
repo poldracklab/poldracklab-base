@@ -1,5 +1,5 @@
 import numpy as np
-from poldracklab.ml.cv import BalancedKFold
+from poldracklab.ml import BalancedKFold
 
 
 def test_get_balanced_folds():
