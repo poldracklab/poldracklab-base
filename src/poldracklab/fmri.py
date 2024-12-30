@@ -4,6 +4,7 @@ import scipy.stats
 import numpy as np
 from typing import Optional
 
+
 def spm_hrf(
     TR: (float, np.ndarray), fMRI_T: float = 16.0, p: Optional[np.ndarray] = None
 ) -> np.ndarray:

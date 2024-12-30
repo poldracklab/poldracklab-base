@@ -1,6 +1,7 @@
 import numpy as np
 from poldracklab.fmri import spm_hrf
 
+
 def test_spm_hrf():
     TR = 2.0
     p = np.array([6, 16, 1, 1, 6, 0, 32])
