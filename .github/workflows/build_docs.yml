@@ -19,13 +19,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
 
-      # ADJUST THIS: install all dependencies (including pdoc)
-      - run: pip install -e .
-      # ADJUST THIS: build your documentation into docs/.
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+          
+      - name: "Set up Python"
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: "pyproject.toml"
+          
+      - name: Install the project
+        run: uv sync --all-extras --dev
+
+      - name: Install the module
+        run: uv pip install .     
+
+# ADJUST THIS: build your documentation into docs/.
       # We use a custom build script for pdoc itself, ideally you just run `pdoc -o docs/ ...` here.
       - run: pdoc --html -o docs/
 
