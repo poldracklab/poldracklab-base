@@ -36,26 +36,23 @@ jobs:
 
       - name: Install the module
         run: uv pip install .     
-
-# ADJUST THIS: build your documentation into docs/.
-      # We use a custom build script for pdoc itself, ideally you just run `pdoc -o docs/ ...` here.
-      - run: pdoc --html -o docs/
+  
+      - name: build docs
+        run: uv run pdoc3 --html -o docs/ src/poldracklab
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/
 
-  # Deploy the artifact to GitHub pages.
-  # This is a separate job so that only actions/deploy-pages has the necessary permissions.
+
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
-      - id: deployment
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
