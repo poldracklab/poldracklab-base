@@ -1,5 +1,24 @@
-"""
-functions to work with pubmed data
+"""Functions to work with pubmed data
+
+This module provides functions to work with pubmed data, including querying
+pubmed for articles and parsing the results.
+
+The module contains the following functions:
+
+- `get_processed_query_results`: Query pubmed for articles and return a dictionary of processed results.
+- `run_pubmed_query`: Query pubmed for articles and return the raw pubmed records.
+- `parse_pubmed_query_result`: Parse the pubmed records into a dictionary.
+- `get_pubmed_journal_name`: Get the journal name from a pubmed record.
+- `get_pubmed_title`: Get the title from a pubmed record.
+- `get_pubmed_pmid`: Get the PMID from a pubmed record.
+- `get_pubmed_doi`: Get the DOI from a pubmed record.
+- `get_pubmed_pmcid`: Get the PMCID from a pubmed record.
+- `get_pubmed_year`: Get the year from a pubmed record.
+- `get_pubmed_volume`: Get the volume from a pubmed record.
+- `get_pubmed_pages`: Get the pages from a pubmed record.
+- `get_pubmed_authors`: Get the authors from a pubmed record.
+- `get_pubmed_abstract`: Get the abstract from a pubmed record.
+- `parse_pubmed_record`: Parse a pubmed record into a dictionary.
 """
 
 from Bio import Entrez

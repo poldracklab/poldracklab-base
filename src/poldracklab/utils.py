@@ -1,3 +1,14 @@
+"""Utility functions
+
+This module provides general utility functions, including
+functions to run shell commands and download files.
+
+The module contains the following functions:
+
+- `run_shell_cmd`: Run a shell command and return the output
+- `DownloadFile`: Download a file from a URL to a local filename
+"""
+
 import subprocess
 from typing import Optional, List
 import requests

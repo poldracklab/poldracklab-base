@@ -1,3 +1,13 @@
+"""Functions for cross-validation
+
+This module provides functions for cross-validation, including
+functions to split data into training and testing sets.
+
+The module contains the following functions:
+
+- `BalancedKFold`: Split data into training and testing sets using anova across CV folds
+"""
+
 from statsmodels.regression.linear_model import OLS
 from sklearn.model_selection import KFold
 import numpy as np

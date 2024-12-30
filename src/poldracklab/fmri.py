@@ -1,4 +1,13 @@
-#!/usr/bin/env python
+"""Provide functions for working with fMRI data
+
+This module provides functions for working with fMRI data, including generating
+hemodynamic response functions (HRFs).
+
+The module contains the following functions:
+
+- `spm_hrf`: Generates a hemodynamic response function (HRF) using a combination of two gamma functions.
+
+"""
 
 import scipy.stats
 import numpy as np

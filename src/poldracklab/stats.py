@@ -1,5 +1,12 @@
-"""
-utils to convert between r and z values
+"""Statistical utilities
+
+This module provides utilities for statistical analysis, including functions
+to convert between r and z values.
+
+The module contains the following functions:
+
+- `r_to_z`: Convert r values to z values
+- `z_to_r`: Convert z values to r values
 """
 
 import numpy as np
