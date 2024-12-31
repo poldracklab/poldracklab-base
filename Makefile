@@ -5,6 +5,6 @@ test:
 build-docs:
 	- rm -rf docs
 	pdoc --html -o docs src/poldracklab
-	git add docs
-	git commit -m "Update documentation"
+	#git add docs
+	#git commit -m "Update documentation"
 	
