@@ -27,8 +27,7 @@ jobs:
       - run: pip install -e .
       # ADJUST THIS: build your documentation into docs/.
       # We use a custom build script for pdoc itself, ideally you just run `pdoc -o docs/ ...` here.
-      - run: pdoc --force -o ./docs ./src/poldracklab
-      - run: ls docs
+      - run: pdoc --html --force -o ./docs ./src/poldracklab
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./docs/poldracklab/
